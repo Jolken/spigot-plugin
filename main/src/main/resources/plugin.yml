@@ -1,0 +1,12 @@
+name: Jolkenmain
+version: ${project.version}
+author: Jolken
+main: jolkenplugins.jolkenmain.Jolkenmain
+api-version: 1.14
+commands:
+  jolken:
+    description: my command
+    usage: /jolken
+    aliases: j
+    permission: jolken.war
+
