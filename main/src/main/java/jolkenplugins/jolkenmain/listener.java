@@ -7,23 +7,19 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
 public final class listener implements Listener {
-    public boolean [] isPvP;
+    private final Jolkenmain plugin;
 
-    public listener(boolean[] bool)
-    {
-        isPvP = bool;
+    public listener(Jolkenmain plg) {
+        plugin = plg;
     }
-    @EventHandler(priority= EventPriority.LOW)
-    public void onPlayerDeath(PlayerDeathEvent event)
-    {
+
+    @EventHandler(priority = EventPriority.LOW)
+    public void onPlayerDeath(PlayerDeathEvent event) {
         Player player = event.getEntity();
         Player killer = player.getKiller();
-        if (killer != null && !isPvP[0])
-        {
+        if (killer != null && !plugin.config.getBoolean("warmode")) {
             event.setKeepInventory(true);
-        }
-        else
-        {
+        } else {
             event.setKeepInventory(false);
         }
     }

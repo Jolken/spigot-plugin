@@ -4,9 +4,12 @@ author: Jolken
 main: jolkenplugins.jolkenmain.Jolkenmain
 api-version: 1.14
 commands:
-  jolken:
+  war:
     description: my command
-    usage: /jolken
-    aliases: j
+    usage: /war
+    aliases: w
     permission: jolken.war
-
+  survival:
+    description: my command
+    usage: /survival
+    aliases: sv
